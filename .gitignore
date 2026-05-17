@@ -1,0 +1,36 @@
+# Virtual environment
+venv/
+.venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+instance/
+
+# Secrets
+.env
+.env.local
+*.key
+*.pem
+
+# IDE / Editor
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+*~
+
+# Generated artifacts
+exploits/reports/
+app/uploads/
+*.log
