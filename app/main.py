@@ -9,9 +9,24 @@ init_db()
 def home():
     return render_template("login.html")
 
-@app.route("/login")
+@app.route("/login", methods=["GET", "POST"])
 def login():
-    return render_template("login.html")
+    if request.method == "POST":
+        username = request.form.get("username", "")
+        password = request.form.get("password", "")
+
+        conn = get_connection()
+
+        query = f"SELECT * FROM users WHERE username = '{username}' AND password = '{password}'"
+        user = conn.execute(query).fetchone()
+
+        conn.close()
+
+    if user:
+        return "<h1>Login erfolgreich!</h1><a href='/shop'>Zum Shop</a>"
+
+    else:
+        return "<h1>Login fehlgeschlagen!</h1><a href='/login'>Zurück</a>"
 
 @app.route("/register")
 def register():
@@ -26,11 +41,9 @@ def shop():
     search = request.args.get("search", "")
 
     conn = get_connection()
-
-    # Absichtlich unsicher für VULN-01 SQL-Injection
-    query = f"SELECT * FROM products WHERE name LIKE '%{search}%'"
-
-    products = conn.execute(query).fetchall()
+    products = conn.execute(
+        f"SELECT * FROM products WHERE name LIKE '%{search}%'"
+    ).fetchall()
     conn.close()
 
     return render_template("shop.html", products=products, search=search)

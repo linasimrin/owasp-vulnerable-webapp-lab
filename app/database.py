@@ -16,7 +16,21 @@ def init_db():
     )
     """)
 
+    conn.execute("""
+    CREATE TABLE IF NOT EXISTS users (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        username TEXT,
+        password TEXT
+    )
+    """)
+
     conn.execute("DELETE FROM products")
+    conn.execute("DELETE FROM users")
+
+    conn.execute(
+        "INSERT INTO users (username, password) VALUES (?, ?)",
+        ("lina", "1234")
+    )
 
     products = [
         ("Hello Kitty Tasche", 29.99),

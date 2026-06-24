@@ -1,61 +1,23 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Hello Kitty Login</title>
-
-    <style>
-        body {
-            background-color: #ffd6e7;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding-top: 50px;
-        }
-
-        .box {
-            background: white;
-            width: 400px;
-            margin: auto;
-            padding: 30px;
-            border-radius: 20px;
-        }
-
-        input {
-            width: 80%;
-            padding: 10px;
-            margin: 10px;
-        }
-
-        button {
-            background: hotpink;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 10px;
-        }
-
-        img {
-            width: 200px;
-        }
-    </style>
 </head>
+<body style="background-color:#ffd6e7; font-family:Arial; text-align:center; padding-top:50px;">
 
-<body>
+    <div style="background:white; width:400px; margin:auto; padding:30px; border-radius:20px;">
+        <h1>Login</h1>
 
-<div class="box">
-
-    <img src="https://upload.wikimedia.org/wikipedia/en/0/05/Hello_Kitty_character_portrait.png">
-
-    <h1>Login</h1>
-
-    <form>
-        <input type="text" placeholder="Benutzername"><br>
-
-        <input type="password" placeholder="Passwort"><br>
-
-        <button>Einloggen</button>
-    </form>
-
-</div>
+        <form method="post" action="/login">
+            <input type="text" name="username" placeholder="Benutzername" style="width:80%; padding:10px; margin:10px;">
+            <br>
+            <input type="password" name="password" placeholder="Passwort" style="width:80%; padding:10px; margin:10px;">
+            <br>
+            <button type="submit" style="background:hotpink; color:white; padding:10px 30px; border:none; border-radius:10px;">
+                Einloggen
+            </button>
+        </form>
+    </div>
 
 </body>
 </html>
