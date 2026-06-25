@@ -3,11 +3,6 @@
 Bonusprojekt ITS, SoSe 2026, Hochschule Bochum.
 Projekt 3: Vulnerable Webapp mit automatisiertem Exploit-Framework.
 
-## Hinweis
-
-Diese Anwendung enthält absichtlich Sicherheitslücken. Nur in einer isolierten
-Umgebung (Docker oder VM) und nicht öffentlich erreichbar ausführen.
-
 ## Über das Projekt
 
 Wir entwickeln einen Online-Shop mit mindestens 8 bewusst eingebauten Lücken
