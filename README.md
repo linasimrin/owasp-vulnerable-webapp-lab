@@ -15,7 +15,7 @@ automatisch ausnutzt und einen Report erzeugt.
 |---------------|----------------|-------------------------------------|
 | Elina Velecka | 18389748       | Auth & Exploit-Framework            |
 | Lina Simrin   | 18395871       | Shop-Backend & SQLi-Lücken          |
-| Njomza Zumeri |                | Forum/Reviews & XSS-Lücken          |
+| Njomza Zumeri | 18386523       | Forum/Reviews & XSS-Lücken          |
 
 ## Tech-Stack
 
